@@ -8,21 +8,33 @@
     tools:context=".MainActivity">
 
     <EditText
+        android:id="@+id/edtTxtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"
         android:layout_centerInParent="true"
-        android:id="@+id/edtTxtName"
-        android:textColor="#ADD8E6"/>
+        android:hint="email"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:textColor="#ADD8E6" />
 
     <Button
+        android:id="@+id/btnSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/edtTxtEmail"
         android:layout_centerInParent="true"
-        android:text="Say Hello"
-        android:id="@+id/btnHello"
+        android:layout_marginTop="20dp"
         android:background="@color/design_default_color_primary"
-        android:layout_below="@id/edtTxtName"
-        android:layout_marginTop="20dp" />
+        android:text="Submit" />
+
+    <TextView
+        android:id="@+id/txtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSubmit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text=""
+        android:textSize="20dp" />
 
 </RelativeLayout>

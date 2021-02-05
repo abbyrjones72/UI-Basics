@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,15 +13,23 @@ import java.util.concurrent.TimeoutException;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private Button btnSubmit;
+    private EditText edtTxtEmail;
+    private TextView txtEmail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnHello = findViewById(R.id.btnHello);
-        btnHello.setOnClickListener(this);
+        // button
+        btnSubmit = findViewById(R.id.btnSubmit);
+        btnSubmit.setOnClickListener(this);
 
-        btnHello.setOnLongClickListener(new View.OnLongClickListener() {
+        edtTxtEmail = findViewById(R.id.edtTxtEmail);
+        txtEmail = findViewById(R.id.txtEmail);
+
+        btnSubmit.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 Toast.makeText(MainActivity.this, "I'm being pressed long!", Toast.LENGTH_LONG).show();
@@ -33,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch(v.getId()) {
 
-            case R.id.btnHello:
+            case R.id.btnSubmit:
                 Toast.makeText(this, "I need a job...", Toast.LENGTH_LONG).show();
                 Toast.makeText(this, "This House is Clean.", Toast.LENGTH_SHORT).show();
                 break;
