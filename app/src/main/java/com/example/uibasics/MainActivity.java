@@ -28,23 +28,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         edtTxtEmail = findViewById(R.id.edtTxtEmail);
         txtEmail = findViewById(R.id.txtEmail);
-
-        btnSubmit.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(MainActivity.this, "I'm being pressed long!", Toast.LENGTH_LONG).show();
-                return true;
-            }
-        });
     }
 
     @Override
     public void onClick(View v) {
         switch(v.getId()) {
-
             case R.id.btnSubmit:
-                Toast.makeText(this, "I need a job...", Toast.LENGTH_LONG).show();
-                Toast.makeText(this, "This House is Clean.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Submitted successfully", Toast.LENGTH_LONG).show();
+                edtTxtEmail.setText("");
                 break;
             default:
                 break;
